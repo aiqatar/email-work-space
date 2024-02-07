@@ -8,9 +8,9 @@ const dynamicTemplateData = {
             : `عزيزي ${first_name}،`,
     content1:
         emailData.language === 'en'
-            ? `Thank you for paying (QR${amount}) to upload your project on FOZDEAL
+            ? `Thank you for paying the amount of (QR${amount}) to upload your project on FOZDEAL
      platform. We’ll contact you once it gets reviewed.`
-            : `نشكرك على دفع ${amount} ريال قطري لعرض مشروعك في منصة فوزديل. سيتم التواصل معك بعد إتمام مراجعته`,
+            : `نشكرك على دفع مبلغ ${amount} ريال قطري لعرض مشروعك في منصة فوزديل. سيتم التواصل معك بعد إتمام مراجعته`,
     content2:
         emailData.language === 'en'
             ? `You can track your project status from here:`
