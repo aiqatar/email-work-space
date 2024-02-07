@@ -29,6 +29,46 @@ const dynamicTemplateData = {
 };
 
 
+if (emailData.project_status === 'approved') {
+    dynamicTemplateData.content1 =
+        emailData.language === 'en'
+            ? 'Congratulations! Your project has been accepted. It is now live on FOZDEAL.'
+            : 'تهانينيا! تم قبول مشروعك على منصة فوزديل';
+
+    dynamicTemplateData.content2 =
+        emailData.language === 'en'
+            ? 'Click below to view your project details.'
+            : 'انقر فوق الزر أدناه لعرض تفاصيل مشروعك';
+    dynamicTemplateData.subject =
+        emailData.language === 'en'
+            ? 'Project Accepted'
+            : 'تم قبول المشروع';
+}
+
+if (emailData.project_status === 'rejected') {
+    dynamicTemplateData.content1 =
+        emailData.language === 'en'
+            ? 'Thank you for submitting your project. After a careful review, we regret to inform you that your project has not been accepted at this time. Due to the following reason(s):'
+            : 'شكرًا لتقديم مشروعك. بعد استعراض دقيق، نأسف لإبلاغكم بأن مشروعك لم يتم قبوله في هذا الوقت. نظرًا للأسباب التالية:';
+
+    dynamicTemplateData.content3 =
+        emailData.language === 'en'
+            ? 'We appreciate your effort and encourage you to address the feedback and consider submitting again in the future.'
+            : 'نحن نقدر جهودك ونشجعك على التعامل مع التعليقات والنظر في إعادة التقديم مرة أخرى في المستقبل.';
+    dynamicTemplateData.content4 =
+        emailData.language === 'en'
+            ? 'Note: You can upload one project at any time.'
+            : 'ملاحظة: يمكنك تحميل مشروع واحد في أي وقت.';
+    dynamicTemplateData.content5 =
+        emailData.language === 'en'
+            ? 'Click on the following button to view your project status.'
+            : 'انقر فوق الزر أدناه لعرض حالة مشروعك.';
+
+    dynamicTemplateData.subject =
+        emailData.language === 'en'
+            ? 'Project Rejected'
+            : 'المشروع مرفوض';
+}
 
 
 
