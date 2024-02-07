@@ -48,7 +48,7 @@ if (emailData.project_status === 'approved') {
 if (emailData.project_status === 'rejected') {
     dynamicTemplateData.content1 =
         emailData.language === 'en'
-            ? 'After a careful review, we regret to inform you that your project can't be displayed on FOZDEAL due to the following reason(s):'
+            ? "After a careful review, we regret to inform you that your project can't be displayed on FOZDEAL due to the following reason(s):"
             : 'شكرًا لتقديم مشروعك. بعد استعراض دقيق، نأسف لإبلاغكم بأن مشروعك لم يتم قبوله في هذا الوقت. نظرًا للأسباب التالية:';
 
     dynamicTemplateData.content3 =
