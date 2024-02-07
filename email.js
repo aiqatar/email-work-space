@@ -49,20 +49,20 @@ if (emailData.project_status === 'rejected') {
     dynamicTemplateData.content1 =
         emailData.language === 'en'
             ? "After a careful review, we regret to inform you that your project can't be displayed on FOZDEAL due to the following reason(s):"
-            : '';
+            : 'بعد مراجعتنا لمشروعك، يؤسفنا إبلاغك بعدم إمكانية عرضه على منصة فوزديل،للأسباب التالية';
 
     dynamicTemplateData.content3 =
         emailData.language === 'en'
-            ? 'We appreciate your effort and encourage you to address the feedback and consider submitting again in the future.'
-            : 'نحن نقدر جهودك ونشجعك على التعامل مع التعليقات والنظر في إعادة التقديم مرة أخرى في المستقبل.';
+            ? 'We appreciate your effort and encourage you to consider the feedback when submitting the next project.'
+            : ' نقدر جهودك ونرجو تفادي النقاط السابقة عند إضافة مشروع آخر.';
     dynamicTemplateData.content4 =
         emailData.language === 'en'
-            ? 'Note: You can upload one project at any time.'
-            : 'ملاحظة: يمكنك تحميل مشروع واحد في أي وقت.';
+            ? 'Note: You can upload a new project as a replacement. Good Luck!.'
+            : 'ملاحظة: لديك فرصة أخرى لإضافة مشروع آخر، نتمنى لك التوفيق';
     dynamicTemplateData.content5 =
         emailData.language === 'en'
             ? 'Click below to view your project details:'
-            : 'انقر فوق الزر أدناه لعرض تفاصيل مشروعك.';
+            : 'انقر فوق الزر أدناه لعرض تفاصيل مشروعك';
 
     dynamicTemplateData.subject =
         emailData.language === 'en'
