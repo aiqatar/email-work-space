@@ -7,8 +7,8 @@ const dynamicTemplateData = {
             : `عزيزي ${name}،`,
     content1:
         emailData.language === 'en'
-            ? `Your project has been Featured for ${emailData.no_of_days} days.`
-            : `لقد تم تمييز مشروعك لمدة ${emailData.no_of_days} يومًا.`,
+            ? `Thank you for paying the amount of ($X). Your project has been Featured for ${emailData.no_of_days} days.`
+            : `نشكرك لدفع مبلغ () ريال قطري. تم تمييز مشروعك لمدة ${emailData.no_of_days} يومًا.`,
     content2:
         emailData.language === 'en'
             ? `Project name: ${emailData.project_name}`
@@ -18,7 +18,7 @@ const dynamicTemplateData = {
     subject:
         emailData.language === 'en'
             ? 'Project Featured'
-            : 'تم تمييز المشروع'
+            : 'تم تمييز مشروعك'
 };
 
 
@@ -29,10 +29,11 @@ const AdminMsg = {
     dynamicTemplateData: {
         url: emailData.url,
         greeting: `Hi Admin,`,
-        content1: `The following project is Featured for ${emailData.no_of_days} days:`,
+        content1: `The following project has been Featured for ${emailData.no_of_days} days:`,
         content2: `Project name: ${emailData.project_name}`,
+        content3: `Project owner`
         button_text: 'View Project',
-        subject: 'Project Featured'
+        subject: 'A Project Has Been Featured'
     },
     templateId: this.templateIds.content2ButtonEn
 };
