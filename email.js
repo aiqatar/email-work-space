@@ -32,12 +32,12 @@ const dynamicTemplateData = {
 if (emailData.project_status === 'approved') {
     dynamicTemplateData.content1 =
         emailData.language === 'en'
-            ? 'Congratulations! Your project has been accepted. It is now live on FOZDEAL.'
-            : 'تهانينيا! تم قبول مشروعك على منصة فوزديل';
+            ? 'Congratulations! Your project is now live on FOZDEAL.'
+            : 'تهانينيا! تم عرض مشروعك على منصة فوزديل';
 
     dynamicTemplateData.content2 =
         emailData.language === 'en'
-            ? 'Click below to view your project details.'
+            ? 'Click below to view your project details:'
             : 'انقر فوق الزر أدناه لعرض تفاصيل مشروعك';
     dynamicTemplateData.subject =
         emailData.language === 'en'
@@ -48,7 +48,7 @@ if (emailData.project_status === 'approved') {
 if (emailData.project_status === 'rejected') {
     dynamicTemplateData.content1 =
         emailData.language === 'en'
-            ? 'Thank you for submitting your project. After a careful review, we regret to inform you that your project has not been accepted at this time. Due to the following reason(s):'
+            ? 'After a careful review, we regret to inform you that your project can't be displayed on FOZDEAL due to the following reason(s):'
             : 'شكرًا لتقديم مشروعك. بعد استعراض دقيق، نأسف لإبلاغكم بأن مشروعك لم يتم قبوله في هذا الوقت. نظرًا للأسباب التالية:';
 
     dynamicTemplateData.content3 =
@@ -61,13 +61,13 @@ if (emailData.project_status === 'rejected') {
             : 'ملاحظة: يمكنك تحميل مشروع واحد في أي وقت.';
     dynamicTemplateData.content5 =
         emailData.language === 'en'
-            ? 'Click on the following button to view your project status.'
-            : 'انقر فوق الزر أدناه لعرض حالة مشروعك.';
+            ? 'Click below to view your project details:'
+            : 'انقر فوق الزر أدناه لعرض تفاصيل مشروعك.';
 
     dynamicTemplateData.subject =
         emailData.language === 'en'
-            ? 'Project Rejected'
-            : 'المشروع مرفوض';
+            ? 'Project Replacement'
+            : 'استبدال المشروع';
 }
 
 
