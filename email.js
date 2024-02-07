@@ -7,8 +7,8 @@ const dynamicTemplateData = {
             : `عزيزي ${emailData.userName}،`,
     content1:
         emailData.language === 'en'
-            ? 'Your project is available again.'
-            : 'مشروعك متاح مرة أخرى.',
+            ? 'Your project became available again!'
+            : '!مشروعك أصبح متاحاً مرة أخرى',
     content2:
         emailData.language === 'en'
             ? `Project name: ${emailData.project_name}`
@@ -17,6 +17,6 @@ const dynamicTemplateData = {
         emailData.language === 'en' ? 'View Project' : 'عرض المشروع',
     subject:
         emailData.language === 'en'
-            ? 'Project Available'
-            : 'المشروع متاح'
+            ? 'Project Available Again'
+            : 'مشروعك متاح مجدّداً'
 };
