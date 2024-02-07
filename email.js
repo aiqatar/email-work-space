@@ -1,24 +1,10 @@
 
-
-
 const dynamicTemplateData = {
-    url: `https://fozdeal.com/projects/${project_id}`,
-    greeting:
-        emailData.language === 'en'
-            ? `Dear ${first_name},`
-            : `عزيزي ${first_name}،`,
-    content1:
-        emailData.language === 'en'
-            ? `Thank you for paying QRX to upload your project on FOZDEAL
-             platform. We’ll contact you once it gets reviewed.`
-            : 'نشكرك على دفع ${amount} ريال قطري لعرض مشروعك في منصة فوزديل. سيتم التواصل معك بعد إتمام مراجعته',
-    content2:
-        emailData.language === 'en'
-            ? `You can track your project status from here:`
-            : 'يمكنك متابعة حالة مشروعك من هنا',
-    button_text:
-        emailData.language === 'en' ? 'Project Status' : 'حالة المشروع',
-    subject:
-        emailData.language === 'en' ? 'Project Status' : 'حالة المشروع'
+    url: emailData.url,
+    greeting: `Dear Admin,`,
+    content1: `A project was set to be sold.`,
+    content2: `Project name: ${emailData.project_name}`,
+    button_text: 'View Details',
+    subject: 'A Project Has Been Sold'
 };
 
