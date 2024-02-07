@@ -9,13 +9,13 @@ const dynamicTemplateData = {
             : `عزيزي ${first_name}،`,
     content1:
         emailData.language === 'en'
-            ? `Thank you for uploading your project on FOZDEAL
+            ? `Thank you for paying QRX to upload your project on FOZDEAL
              platform. We’ll contact you once it gets reviewed.`
-            : 'نشكرك على رفع مشروعك في منصة فوزديل، وسيتم التواصل معك بعد إتمام مراجعته.',
+            : 'نشكرك على دفع ${amount} ريال قطري لعرض مشروعك في منصة فوزديل. سيتم التواصل معك بعد إتمام مراجعته',
     content2:
         emailData.language === 'en'
             ? `You can track your project status from here:`
-            : 'يمكنك متابعة حالة المشروع من هنا',
+            : 'يمكنك متابعة حالة مشروعك من هنا',
     button_text:
         emailData.language === 'en' ? 'Project Status' : 'حالة المشروع',
     subject:
