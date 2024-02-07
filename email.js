@@ -17,14 +17,3 @@ const dynamicTemplateData = {
     subject:
         emailData.language === 'en' ? 'Project Sold' : 'المشروع متاح'
 };
-// msg to the user
-const msg = {
-    to: emailData.userEmail,
-    from: { email: this.from, name: 'Fozdeal' },
-    dynamicTemplateData,
-    templateId:
-        emailData.language === 'en'
-            ? this.templateIds.content2ButtonEn
-            : this.templateIds.content2ButtonAr
-};      : 'مشروعك متاح مجدّداً'
-};
