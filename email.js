@@ -7,7 +7,7 @@ const dynamicTemplateData = {
     greeting:
         emailData.language === 'en'
             ? `Dear ${name},`
-            : `,${name} مرحبا`,
+            : `,${name} عزيزي`,
     content1:
         emailData.language === 'en'
             ? `After reviewing your project, we kindly request the following modifications:`
@@ -15,8 +15,8 @@ const dynamicTemplateData = {
     content2: note,
     content3:
         emailData.language === 'en'
-            ? `Click on the following button given below to view your project status.`
-            : 'انقر فوق الزر أدناه لعرض حالة مشروعك',
+            ? `Click on the below button to view your project:`
+            : 'انقر فوق الزر أدناه لعرض تفاصيل مشروعك',
     button_text:
         emailData.language === 'en' ? 'View Project' : 'عرض المشروع',
     subject:
