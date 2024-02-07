@@ -4,7 +4,7 @@ const Adminmsg = {
     dynamicTemplateData: {
         url: emailData.url,
         greeting: `Dear Admin,`,
-        content1: `A Project Has Been Sold`,
+        content1: `The following project is set to: Sold`,
         content2: `Project name: ${emailData.project_name}`,
         content3: `Project owner: ${emailData.first_name} ${emailData.last_name}`,
         button_text: 'View Details',
