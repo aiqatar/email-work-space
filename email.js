@@ -2,9 +2,10 @@
 const dynamicTemplateData = {
     url: emailData.url,
     greeting: `Dear Admin,`,
-    content1: `A project was set to be sold.`,
+    content1: `The following project has been set as: Sold.`,
     content2: `Project name: ${emailData.project_name}`,
-    button_text: 'View Details',
-    subject: 'A Project Has Been Sold'
+    content3: `Project owner:`
+        button_text: 'View Details',
+    subject: 'Sold Project'
 };
 
