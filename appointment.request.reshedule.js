@@ -9,8 +9,8 @@
                 : `عزيزي ${emailData.userLastName}،`,
         content1:
             emailData.userLanguage === 'en'
-                ? `Your appointment has been canceled due to an emergency. Please reschedule your appointment. The reason for the cancellation: ${emailData.note}`
-                : `تم إلغاء موعدك بناءً على طلب طارئ. الرجاء إعادة جدولة الموعد. سبب الإلغاء: ${emailData.note}`,
+                ? `Sorry! Your consultant has an emergency and can't attend the meeting. Please reschedule your appointment. The reason for the cancellation: ${emailData.note}`
+                : `يعتذر المستشار عن حضور الموعد اليوم لظرف طارئ، الرجاء إعادة جدولة الموعد. سبب الإلغاء: ${emailData.note}`,
         content2:
             emailData.userLanguage === 'en'
                 ? `Consultant Name: ${
@@ -18,10 +18,10 @@
                       ' ' +
                       emailData.consultantLastName
                   }
-            Consultant Phone Number: ${emailData.consultantPhone}
+            Consultant Phone: ${emailData.consultantPhone}
             ${
                 emailData.consultantOfficePhone?.length
-                    ? `Office Phone Number: ${emailData.consultantOfficePhone}`
+                    ? `Office Phone: ${emailData.consultantOfficePhone}`
                     : ''
             }`
                 : `اسم المستشار: ${
@@ -29,24 +29,24 @@
                       ' ' +
                       emailData.consultantLastNameAr
                   }
-            رقم الهاتف: ${emailData.consultantPhone}
+             هاتف المستشار: ${emailData.consultantPhone}
             ${
                 emailData.consultantOfficePhone?.length
-                    ? ` رقم الهاتف: ${emailData.consultantOfficePhone}`
+                    ? ` هاتف المكتب : ${emailData.consultantOfficePhone}`
                     : ''
             }`,
         content3:
             emailData.userLanguage === 'en'
                 ? `Date: ${emailData.date} at ${emailData.time}`
-                : `تاريخ: ${emailData.date} في ${emailData.time}`,
+                : `التاريخ: ${emailData.date} من ${emailData.time}`,
         content4:
             emailData.userLanguage === 'en'
                 ? emailData.meetingMode === 'consultant office'
                     ? 'Meeting Mode: Consultant Office'
                     : 'Meeting Mode: Online'
                 : emailData.meetingMode === 'consultant office'
-                ? 'وضع الاجتماع: مكتب المستشار'
-                : 'وضع الاجتماع: عبر الإنترنت',
+                ? 'مكان الاجتماع: مكتب المستشار'
+                : 'مكان الاجتماع: عبر الإنترنت',
         content5:
             emailData.meetingMode === 'consultant office'
                 ? `${emailData.office_formatted_address}` +
@@ -62,8 +62,8 @@
                 : `https://www.google.com/maps/search/?api=1&query=${emailData.lat},${emailData.lng}`,
         subject:
             emailData.userLanguage === 'en'
-                ? 'Appointment Canceled'
-                : 'تم إلغاء الموعد'
+                ? 'Action Required: Reschedule'
+                : 'يعتذر المستشار'
     };
 
     
@@ -71,7 +71,8 @@
        // email to the admin
        dynamicTemplateData = {
         greeting: `Dear Admin,`,
-        content1: `A appointment has been canceled. User Name : ${
+        content1: `An appointment has been canceled. \n
+        User Name : ${
             emailData.userFirstName + ' ' + emailData.userLastName
         }. The reason for the cancellation: ${emailData.note}`,
         content2: `Consultant Name: ${
@@ -79,10 +80,10 @@
             ' ' +
             emailData.consultantLastName
         }
-            Consultant Phone Number: ${emailData.consultantPhone}
+            Consultant Phone: ${emailData.consultantPhone}
             ${
                 emailData.consultantOfficePhone?.length
-                    ? `Office Phone Number: ${emailData.consultantOfficePhone}`
+                    ? `Office Phone: ${emailData.consultantOfficePhone}`
                     : ''
             }`,
         content3: `Date: ${emailData.date} at ${emailData.time}`,

@@ -9,20 +9,20 @@
             : `عزيزي ${first_name_ar}،`,
     content1:
         emailData.language === 'en'
-            ? `Your request to become a consultant has been approved.`
-            : `تم تأكيد طلبك لتكون مستشارًا.`,
+            ? `Thank you for joining FOZDEAL consultants team!`
+            : `سعداء بانضمامك إلى فريق مستشاري فوزديل`,
     content2:
         emailData.language === 'en'
-            ? `Click the button below to view your profile.`
-            : `انقر على الزر أدناه لعرض ملفك الشخصي.`,
+            ? `Click below to view your profile.`
+            : `انقر على الزر أدناه لعرض التفاصيل.`,
     button_text:
         emailData.language === 'en'
             ? 'Your Dashboard'
-            : 'عرض الملف الشخصي',
+            : 'لوحة التحكم',
     subject:
         emailData.language === 'en'
-            ? 'Consultant Request Approved'
-            : 'تم تأكيد طلب المستشار'
+            ? 'Approved: Consultant Request'
+            : 'تم انضمامك كمستشار'
 };
 
 // when his request get rejected ** we are not using but in canse if you we want to sent we can sent
@@ -30,16 +30,16 @@
    if (emailData.status === 'rejected') {
     dynamicTemplateData.content1 =
         emailData.language === 'en'
-            ? `Your request to become a consultant has been rejected.`
-            : `تم رفض طلبك لتكون مستشارًا.`;
+            ? `Your request to become a consultant has not been approved yet.`
+            : ` لم يتم معالجة طلبك للانضمام كمستشار بعد`;
     dynamicTemplateData.content2 =
         emailData.language === 'en'
             ? `Click the button below to view your profile.`
             : `انقر على الزر أدناه لعرض ملفك الشخصي.`;
     dynamicTemplateData.subject =
         emailData.language === 'en'
-            ? 'Consultant Request Rejected'
-            : 'تم رفض طلب المستشار';
+            ? 'Your Request'
+            : 'بخصوص طلبك';
 }
 
 // when his request is pending/under review
@@ -49,21 +49,21 @@
             dynamicTemplateData.url = `https://fozdeal.com/consultants`;
             dynamicTemplateData.content1 =
                 emailData.language === 'en'
-                    ? `Your request to become a consultant is under review.`
-                    : `تم رفض طلبك لتكون مستشارًا.`;
+                    ? `Your request is under review.`
+                    : `طلبك قيد المراجعة`;
             dynamicTemplateData.content2 =
                 emailData.language === 'en'
                     ? `Click the button below to view all the consutlants.`
-                    : `انقر على الزر أدناه لعرض ملفك الشخصي.`;
+                    : `انقر على الزر أدناه للاطلاع على صفحة المستشارين.`;
             // button
             dynamicTemplateData.button_text =
                 emailData.language === 'en'
                     ? 'View Consultants'
-                    : 'عرض المستشارين';
+                    : 'قائمة المستشارين';
             dynamicTemplateData.subject =
                 emailData.language === 'en'
                     ? 'Consultant Request Pending'
-                    : 'تم رفض طلب المستشار';
+                    : 'الطلب قيد المراجعة';
         }
 
 
@@ -75,24 +75,20 @@
             dynamicTemplateData.content1 =
                 emailData.language === 'en'
                     ? `Your profile is inactive.`
-                    : `تم رفض طلبك لتكون مستشارًا.`;
+                    : `حسابك غير مفعّل`;
             dynamicTemplateData.content2 =
                 emailData.language === 'en'
-                    ? `Click the button below to contact the administrator.`
-                    : `انقر على الزر أدناه للاتصال بالمسؤول.`;
+                    ? `Click the button below to contact the admin.`
+                    : `يمكنك التواصل مع الإدارة عبر الرابط التالي`;
             // button
             dynamicTemplateData.button_text =
                 emailData.language === 'en'
-                    ? 'Contact Administrator'
-                    : 'الاتصال بالمسؤول';
-            dynamicTemplateData.button_text =
-                emailData.language === 'en'
-                    ? 'View Consultants'
-                    : 'عرض المستشارين';
+                    ? 'Contact Us'
+                    : 'تواصل معنا';
             dynamicTemplateData.subject =
                 emailData.language === 'en'
-                    ? 'Consultant Profile Inactivated'
-                    : 'تم تعطيل ملف المستشار';
+                    ? 'Account is Inactivated'
+                    : 'الحساب غير مفعّل';
         }
 
 
@@ -104,7 +100,7 @@
     dynamicTemplateData: {
         url: `https://fozdeal.com/admin/consultants`,
         greeting: `Hi Admin`,
-        content1: `You have new Consultant Request Waiting for your action`,
+        content1: `You have a new consultant request waiting for your action`,
         content2: `Consultant name: ${first_name} ${last_name}`,
         button_text: 'View Request',
         subject: 'Consultant Request'

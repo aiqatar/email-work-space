@@ -8,36 +8,38 @@ let dynamicTemplateData = {
             : `عزيزي ${emailData.userFirstName}،`,
     content1:
         emailData.userlanguage === 'en'
-            ? `Your appointment has been been modified. Consultant Name: ${
+            ? `Your appointment has been been modified. \n
+            Consultant Name: ${
                   emailData.consultantFirstName +
                   ' ' +
                   emailData.consultantLastName
               }.
-                Consultant Phone Number: ${emailData.consultantPhone}
+                Consultant Phone: ${emailData.consultantPhone}
               ${
                   emailData.consultantOfficePhone?.length
-                      ? `Office Phone Number: ${emailData.consultantOfficePhone}`
+                      ? `Office Phone: ${emailData.consultantOfficePhone}`
                       : ''
               }`
-            : `تم حجز موعدك بنجاح! اسم المستشار: ${
+            : `تم حجز موعدك بنجاح! \n
+            اسم المستشار: ${
                   emailData.consultantFirstNameAr +
                   ' ' +
                   emailData.consultantLastNameAr
-              } رقم الهاتف: ${emailData.consultantPhone}
+              } هاتف المستشار : ${emailData.consultantPhone}
               
               ${
                   emailData.consultantOfficePhone?.length
-                      ? ` رقم الهاتف: ${emailData.consultantOfficePhone}`
+                      ? ` هاتف المكتب: ${emailData.consultantOfficePhone}`
                       : ''
               }`,
     content2:
         emailData.userlanguage === 'en'
-            ? `Old: ${emailData.oldDate} from ${emailData.oldTime}`
-            : `القديم: ${emailData.oldDate} من ${emailData.oldTime}`,
+            ? `Old Appointment: ${emailData.oldDate} from ${emailData.oldTime}`
+            : `الموعد القديم: ${emailData.oldDate} من ${emailData.oldTime}`,
     content3:
         emailData.userlanguage === 'en'
-            ? `New: ${emailData.newDate} from ${emailData.newTime}`
-            : `الجديد: ${emailData.newDate} من ${emailData.newTime}`,
+            ? `New ِAppointment: ${emailData.newDate} from ${emailData.newTime}`
+            : `الموعد الجديد: ${emailData.newDate} من ${emailData.newTime}`,
 
     content4:
         emailData.userlanguage === 'en'
@@ -45,8 +47,8 @@ let dynamicTemplateData = {
                 ? 'Meeting Mode: Consultant Office'
                 : 'Meeting Mode: Online'
             : emailData.meetingMode === 'consultant office'
-            ? 'وضع الاجتماع: مكتب المستشار'
-            : 'وضع الاجتماع: عبر الإنترنت',
+            ? 'مكان الاجتماع: مكتب المستشار'
+            : 'مكان الاجتماع: عبر الإنترنت',
     content5:
         emailData.meetingMode === 'consultant office'
             ? `${emailData.office_formatted_address}` +
@@ -63,7 +65,7 @@ let dynamicTemplateData = {
     subject:
         emailData.userlanguage === 'en'
             ? 'Appointment Modified!'
-            : 'تم حجز الموعد بنجاح'
+            : 'تم تحديث الموعد بنجاح'
 };
 
 // *********************** CONSULTANT *********************
@@ -76,20 +78,22 @@ let dynamicTemplateData = {
                 : `عزيزي ${emailData.consultantFirstNameAr}،`,
         content1:
             emailData.consultantLanguage === 'en'
-                ? `Your appointment has been been modified. User Name: ${
+                ? `An appointment has been been modified. \n
+                User Name: ${
                       emailData.userFirstName + ' ' + emailData.userLastName
                   }`
-                : `تم حجز موعدك بنجاح! اسم المستشار: ${
+                : `تم تحديث موعد! \n
+                الاسم: ${
                       emailData.userFirstName + ' ' + emailData.userLastName
                   }`,
         content2:
             emailData.consultantLanguage === 'en'
-                ? `Old: ${emailData.oldDate} from ${emailData.oldTime}`
-                : `القديم: ${emailData.oldDate} من ${emailData.oldTime}`,
+                ? `Old Appointment: ${emailData.oldDate} from ${emailData.oldTime}`
+                : `الموعد القديم: ${emailData.oldDate} الساعة: ${emailData.oldTime}`,
         content3:
             emailData.consultantLanguage === 'en'
-                ? `New: ${emailData.newDate} from ${emailData.newTime}`
-                : `الجديد: ${emailData.newDate} من ${emailData.newTime}`,
+                ? `New Appointment: ${emailData.newDate} from ${emailData.newTime}`
+                : `الموعد الجديد: ${emailData.newDate} الساعة ${emailData.newTime}`,
 
         content4:
             emailData.consultantLanguage === 'en'
@@ -97,8 +101,8 @@ let dynamicTemplateData = {
                     ? 'Meeting Mode: Consultant Office'
                     : 'Meeting Mode: Online'
                 : emailData.meetingMode === 'consultant office'
-                ? 'وضع الاجتماع: مكتب المستشار'
-                : 'وضع الاجتماع: عبر الإنترنت',
+                ? 'مكان الاجتماع: مكتب المستشار'
+                : 'مكان الاجتماع: عبر الإنترنت',
         content5:
             emailData.meetingMode === 'consultant office'
                 ? `${emailData.office_formatted_address}` +
@@ -115,7 +119,7 @@ let dynamicTemplateData = {
         subject:
             emailData.consultantLanguage === 'en'
                 ? 'Appointment Modified!'
-                : 'تم حجز الموعد بنجاح'
+                : 'تم تحديث موعد'
     };
 
 //  ********************** ADMIN ****************
@@ -127,10 +131,10 @@ let dynamicTemplateData = {
             } and consultant Name: ${
                 emailData.consultantFirstName + emailData.consultantLastName
             }
-            Consultant Phone Number ${emailData.consultantPhone}
+            Consultant Phone: ${emailData.consultantPhone}
             ${
                 emailData.consultantOfficePhone?.length
-                    ? `Office Phone Number: ${emailData.consultantOfficePhone}`
+                    ? `Office Phone: ${emailData.consultantOfficePhone}`
                     : ''
             }
             `,
@@ -139,8 +143,8 @@ let dynamicTemplateData = {
                     ? 'Consultant Office'
                     : 'Online'
             }`,
-            content3: `Old: ${emailData.oldDate} from ${emailData.oldTime}`,
-            content4: `New: ${emailData.newDate} from ${emailData.newTime}`,
+            content3: `Old Appointmrnt: ${emailData.oldDate} from ${emailData.oldTime}`,
+            content4: `New Appointment: ${emailData.newDate} from ${emailData.newTime}`,
             content5:
                 emailData.meetingMode === 'consultant office'
                     ? `${

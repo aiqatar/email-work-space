@@ -11,17 +11,17 @@ const dynamicTemplateData = {
     content1:
         emailData.language === 'en'
             ? 'Your account has been Inactivated'
-            : 'تم تعطيل حسابك',
+            : 'حالة حسابك: غير مفعل',
     content2:
         emailData.language === 'en'
-            ? 'You can contact the FOZDEAL team for more details.'
+            ? 'You can contact FOZDEAL team for more details.'
             : 'يمكنك الاتصال بفريق فوزديل للحصول على مزيد من التفاصيل.',
     button_text:
         emailData.language === 'en' ? 'Contact Us' : 'اتصل بنا',
     subject:
         emailData.language === 'en'
             ? 'Account Inactivated'
-            : 'تم تعطيل الحساب'
+            : 'حسابك غير مفعل'
 };
 
 // when users account get activated
