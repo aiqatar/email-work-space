@@ -8,8 +8,8 @@ let dynamicTemplateData = {
             : `عزيزي ${emailData.userFirstName}،`,
     content1:
         emailData.userLanguage === 'en'
-            ? 'This is the reminder for the Appoinetment!'
-            : `تم حجز موعدك بنجاح!`,
+            ? 'This is a gentle reminder of your consultation appoinetment 24 hours from now!'
+            : `نود تذكيرك بموعدك مع المستشار والذي سيعقد خلال 24 ساعة من الآن `,
     content2:
         emailData.userLanguage === 'en'
             ? `Consultant Name: ${
@@ -17,10 +17,10 @@ let dynamicTemplateData = {
                   ' ' +
                   emailData.consultantLastName
               }
-            Consultant Phone Number: ${emailData.consultantPhone}
+            Consultant Phone: ${emailData.consultantPhone}
             ${
                 emailData.consultantOfficePhone?.length
-                    ? `Office Phone Number: ${emailData.consultantOfficePhone}`
+                    ? `Office Phone: ${emailData.consultantOfficePhone}`
                     : ''
             }`
             : `اسم المستشار: ${
@@ -28,16 +28,16 @@ let dynamicTemplateData = {
                   ' ' +
                   emailData.consultantLastNameAr
               }
-            رقم الهاتف: ${emailData.consultantPhone}
+        هاتف المستشار : ${emailData.consultantPhone}
             ${
                 emailData.consultantOfficePhone?.length
-                    ? ` رقم الهاتف: ${emailData.consultantOfficePhone}`
+                    ? ` هاتف المكتب: ${emailData.consultantOfficePhone}`
                     : ''
             }`,
     content3:
         emailData.userLanguage === 'en'
             ? `Date ${emailData.date} at ${emailData.time}`
-            : `تاريخ ${emailData.date} في ${emailData.time}`,
+            : `الموعد ${emailData.date} في ${emailData.time}`,
 
     content4:
         emailData.userLanguage === 'en'
@@ -45,8 +45,8 @@ let dynamicTemplateData = {
                 ? 'Meeting Mode: Consultant Office'
                 : 'Meeting Mode: Online'
             : emailData.meetingMode === 'consultant office'
-            ? 'وضع الاجتماع: مكتب المستشار'
-            : 'وضع الاجتماع: عبر الإنترنت',
+            ? 'مكان الاجتماع: مكتب المستشار'
+            : 'مكان الاجتماع: عبر الإنترنت',
     content5:
         emailData.meetingMode === 'consultant office'
             ? `${emailData.office_formatted_address}` +
@@ -63,7 +63,7 @@ let dynamicTemplateData = {
     subject:
         emailData.userLanguage === 'en'
             ? 'Appointment Reminder'
-            : 'تم حجز الموعد بنجاح'
+            : 'تذكير بالموعد'
 };
 
 // ******************************* CONSULTANT ************************
@@ -76,22 +76,22 @@ dynamicTemplateData = {
             : `عزيزي ${emailData.consultantFirstNameAr}،`,
     content1:
         emailData.consultantLanguage === 'en'
-            ? 'This is the reminder for the Appoinetment!'
-            : `تم حجز موعدك بنجاح!`,
+            ? 'This is a gentle reminder of your consultation appoinetment 24 hours from now!'
+            : ` نود تذكيرك بموعدك القادم والذي سيعقد بعد 24 ساعة من الآن!`,
     content2:
         emailData.consultantLanguage === 'en'
-            ? `User Name: ${
+            ? `Name: ${
                   emailData.userFirstName + ' ' + emailData.userLastName
               }
         `
-            : `اسم المستشار: ${
+            : `الاسم : ${
                   emailData.userFirstName + ' ' + emailData.userLastName
               }
            `,
     content3:
         emailData.consultantLanguage === 'en'
             ? `Date ${emailData.date} at ${emailData.time}`
-            : `تاريخ ${emailData.date} في ${emailData.time}`,
+            : `التاريخ ${emailData.date} في ${emailData.time}`,
 
     content4:
         emailData.consultantLanguage === 'en'
@@ -99,8 +99,8 @@ dynamicTemplateData = {
                 ? 'Meeting Mode: Consultant Office'
                 : 'Meeting Mode: Online'
             : emailData.meetingMode === 'consultant office'
-            ? 'وضع الاجتماع: مكتب المستشار'
-            : 'وضع الاجتماع: عبر الإنترنت',
+            ? 'مكان الاجتماع: مكتب المستشار'
+            : 'مكان الاجتماع: عبر الإنترنت',
     content5:
         emailData.meetingMode === 'consultant office'
             ? `${emailData.office_formatted_address}` +
@@ -117,7 +117,7 @@ dynamicTemplateData = {
     subject:
         emailData.consultantLanguage == 'en'
             ? 'Appointment Reminder'
-            : 'تم حجز الموعد بنجاح'
+            : 'تذكير بالموعد'
 };
 
 

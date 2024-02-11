@@ -17,10 +17,10 @@
                   ' ' +
                   emailData.consultantLastName
               }.
-                Consultant Phone Number: ${emailData.consultantPhone}
+                Consultant Phone: ${emailData.consultantPhone}
             ${
                 emailData.consultantOfficePhone?.length
-                    ? `Office Phone Number: ${emailData.consultantOfficePhone}`
+                    ? `Office Phone: ${emailData.consultantOfficePhone}`
                     : ''
             }`
             : `اسم المستشار: ${
@@ -28,16 +28,16 @@
                   ' ' +
                   emailData.consultantLastNameAr
               }
-            رقم الهاتف: ${emailData.consultantPhone}
+            هاتف المستشار : ${emailData.consultantPhone}
             ${
                 emailData.consultantOfficePhone?.length
-                    ? ` رقم الهاتف: ${emailData.consultantOfficePhone}`
+                    ? ` هاتف المكتب: ${emailData.consultantOfficePhone}`
                     : ''
             }`,
     content3:
         emailData.userLanguage === 'en'
             ? `Date ${emailData.date} at ${emailData.time}`
-            : `تاريخ ${emailData.date} في ${emailData.time}`,
+            : `التاريخ ${emailData.date} في ${emailData.time}`,
 
     content4:
         emailData.userLanguage === 'en'
@@ -45,8 +45,8 @@
                 ? 'Meeting Mode: Consultant Office'
                 : 'Meeting Mode: Online'
             : emailData.meetingMode === 'consultant office'
-            ? 'وضع الاجتماع: مكتب المستشار'
-            : 'وضع الاجتماع: عبر الإنترنت',
+            ? 'مكان الاجتماع: مكتب المستشار'
+            : 'مكان الاجتماع: عبر الإنترنت',
     content5:
         emailData.meetingMode === 'consultant office'
             ? `${emailData.office_formatted_address}` +
@@ -81,12 +81,12 @@
             : 'لديك موعد جديد!',
     content2:
         emailData.consultantLanguage === 'en'
-            ? `User Name : ${emailData.userFirstName} ${emailData.userLastName}`
-            : `اسم المستخدم: ${emailData.userFirstName} ${emailData.userLastName}`,
+            ? `Name : ${emailData.userFirstName} ${emailData.userLastName}`
+            : `الاسم : ${emailData.userFirstName} ${emailData.userLastName}`,
     content3:
         emailData.consultantLanguage === 'en'
             ? `Date : ${emailData.date} at ${emailData.time}`
-            : `تاريخ ${emailData.date} في ${emailData.time}`,
+            : `التاريخ ${emailData.date} في ${emailData.time}`,
 
     content4:
         emailData.consultantLanguage === 'en'
@@ -94,8 +94,8 @@
                 ? 'Meeting Mode: Consultant Office'
                 : 'Meeting Mode: Online'
             : emailData.meetingMode === 'consultant office'
-            ? 'وضع الاجتماع: مكتب المستشار'
-            : 'وضع الاجتماع: عبر الإنترنت',
+            ? 'مكان الاجتماع: مكتب المستشار'
+            : 'مكان الاجتماع: عبر الإنترنت',
     content5:
         emailData.meetingMode === 'consultant office'
             ? `${emailData.office_formatted_address}` +
@@ -112,25 +112,25 @@
     subject:
         emailData.consultantLanguage === 'en'
             ? 'New Appointment Booked'
-            : 'تم حجز الموعد بنجاح'
+            : 'تم حجز موعد استشارة'
 };
 
 // ********************** ADMIN EMIAL **************************
 // THIS EMIAL WILL SENT TO ADMIN WHEN APPOINTMENT BOOKED SUCCESSFUL
 dynamicTemplateData = {
     greeting: `Dear Admin,`,
-    content1: `New appointment is boooked`,
-    content2: `User Name: ${
+    content1: `New appointment is booked`,
+    content2: `Name: ${
         emailData.userFirstName + ' ' + emailData.userLastName
-    } and for the consultant Name: ${
+    } Consultant: ${
         emailData.consultantFirstName +
         ' ' +
         emailData.consultantLastName
     }.
-    Consultant Phone Number ${emailData.consultantPhone}
+    Consultant phone: ${emailData.consultantPhone}
     ${
         emailData.consultantOfficePhone?.length
-            ? `Office Phone Number: ${emailData.consultantOfficePhone}`
+            ? `Office phone: ${emailData.consultantOfficePhone}`
             : ''
     }`,
     content3: `Date ${emailData.date} at ${emailData.time}`,
