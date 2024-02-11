@@ -1,5 +1,5 @@
 // these are the email sent to the consultantwhen the status of the consultant will change
-
+// done this
 // when consultant request get approved
   const dynamicTemplateData = {
     url: `https://fozdeal.com/consultant-profile/${emailData.consultant_id}`,

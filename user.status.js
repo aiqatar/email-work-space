@@ -1,6 +1,6 @@
 
 // this email is send to user when admin will chang users account status
-
+//  added inside the code
 // when account get inactivated
 const dynamicTemplateData = {
     url: 'https://fozdeal.com',

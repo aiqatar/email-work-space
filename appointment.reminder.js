@@ -1,5 +1,5 @@
 // this is the appointment reminder emails sent to the user and consultants
-
+// done here
 // reminder email to the user
 let dynamicTemplateData = {
     greeting:
@@ -68,7 +68,6 @@ let dynamicTemplateData = {
 
 // ******************************* CONSULTANT ************************
 // reminder email to the consultant
-
 dynamicTemplateData = {
     greeting:
         emailData.consultantLanguage === 'en'
