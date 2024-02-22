@@ -1,5 +1,3 @@
-
-// ------------ event registeration ----------------
 const dynamicTemplateData = {
     url: isOnline
         ? emailData.meetingLink
@@ -10,12 +8,8 @@ const dynamicTemplateData = {
             : `عزيزي ${userFirstName}،`,
     content1:
         emailData.userLanguage === 'en'
-            ? emailData.isFree
-                ? `You are successfully registered in the event ${emailData.eventName}`
-                : `You are successfully register in the event ${emailData.eventName} and the fees is ${emailData.amount} QR`
-            : emailData.isFree
-            ? ` تم تسجيلك بنجاح في فعالية ${emailData.evnetNameAr}`
-            : ` تم تسجيلك بنجاح في فعالية ${emailData.evnetNameAr} ونشكرك على سداد المبلغ ${emailData.amount} ريال قطري`,
+            ? `Sorry to inform you that event got modified event name : ${emailData.eventName}`
+            : `نأسف لإبلاغك أنه تم تعديل اسم الحدث: ${emailData.eventNameAr}`,
     content2:
         emailData.userLanguage == 'en'
             ? `Date : ${emailData.eventDate}`
@@ -31,7 +25,7 @@ const dynamicTemplateData = {
                 ? 'Location : Online'
                 : `Location : ${emailData.formaterAddress}`
             : emailData.isOnline
-            ? 'الموقع : عبر الإنترنت'
+            ? 'موقع : عبر الإنترنت'
             : `الموقع: ${emailData.formaterAddress}`,
 
     content5:
@@ -40,24 +34,22 @@ const dynamicTemplateData = {
                 ? 'Join the Online event by clicking the following button'
                 : emailData.location.length > 0
                 ? `Location Details : ${emailData.location}`
-                : 'You can view the location on Map by clicking here:'
+                : 'You can view the location on Map by clicking the following button'
             : emailData.isOnline
-            ? '"يمكنك حضور الفعالية عبر الإنترنت بالضغط على الزر التالي"'
+            ? '"انضم إلى الحدث عبر الإنترنت بالضغط على الزر التالي"'
             : emailData.location.length > 0
             ? `تفاصيل الموقع : ${emailData.locationAr}`
             : 'يمكنك مشاهدة الموقع على الخريطة بالضغط على الزر التالي',
     button_text:
         emailData.userLanguage === 'en'
             ? emailData.isOnline
-                ? 'Join the Event'
-                : 'View Location'
+                ? 'Join Event'
+                : 'View Location On Map'
             : emailData.isOnline
-            ? 'حضور الفعالية'
+            ? 'الانضمام إلى الحدث'
             : 'عرض الموقع على الخريطة',
     subject:
         emailData.userLanguage === 'en'
-            ? 'Event Registration'
-            : 'التسجيل في الفعالية'
+            ? 'Event Modification'
+            : 'تعديل الحدث'
 };
-
-
