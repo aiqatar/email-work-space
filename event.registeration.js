@@ -11,11 +11,11 @@ const dynamicTemplateData = {
     content1:
         emailData.userLanguage === 'en'
             ? emailData.isFree
-                ? `You are successfully register in the event ${emailData.eventName}`
+                ? `You are successfully registered in the event ${emailData.eventName}`
                 : `You are successfully register in the event ${emailData.eventName} and the fees is ${emailData.amount} QR`
             : emailData.isFree
-            ? `لقد تم تسجيلك بنجاح في الحدث ${emailData.evnetNameAr}`
-            : `لقد تم تسجيلك بنجاح في الحدث ${emailData.evnetNameAr} والرسوم ${emailData.amount} ريال قطري`,
+            ? ` تم تسجيلك بنجاح في فعالية ${emailData.evnetNameAr}`
+            : ` تم تسجيلك بنجاح في فعالية ${emailData.evnetNameAr} ونشكرك على سداد المبلغ ${emailData.amount} ريال قطري`,
     content2:
         emailData.userLanguage == 'en'
             ? `Date : ${emailData.eventDate}`
@@ -31,7 +31,7 @@ const dynamicTemplateData = {
                 ? 'Location : Online'
                 : `Location : ${emailData.formaterAddress}`
             : emailData.isOnline
-            ? 'موقع : عبر الإنترنت'
+            ? 'الموقع : عبر الإنترنت'
             : `الموقع: ${emailData.formaterAddress}`,
 
     content5:
@@ -40,22 +40,22 @@ const dynamicTemplateData = {
                 ? 'Join the Online event by clicking the following button'
                 : emailData.location.length > 0
                 ? `Location Details : ${emailData.location}`
-                : 'You can view the location on Map by clicking the following button'
+                : 'You can view the location on Map by clicking here:'
             : emailData.isOnline
-            ? '"انضم إلى الحدث عبر الإنترنت بالضغط على الزر التالي"'
+            ? '"يمكنك حضور الفعالية عبر الإنترنت بالضغط على الزر التالي"'
             : emailData.location.length > 0
             ? `تفاصيل الموقع : ${emailData.locationAr}`
             : 'يمكنك مشاهدة الموقع على الخريطة بالضغط على الزر التالي',
     button_text:
         emailData.userLanguage === 'en'
             ? emailData.isOnline
-                ? 'Join Event'
-                : 'View Location On Map'
+                ? 'Join the Event'
+                : 'View Location'
             : emailData.isOnline
-            ? 'الانضمام إلى الحدث'
+            ? 'حضور الفعالية'
             : 'عرض الموقع على الخريطة',
     subject:
         emailData.userLanguage === 'en'
             ? 'Event Registration'
-            : 'تسجيل الحدث'
+            : 'التسجيل في الفعالية'
 };
