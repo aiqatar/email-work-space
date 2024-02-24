@@ -1,5 +1,7 @@
 
 // ------------ event registeration ----------------
+// done 
+
 const dynamicTemplateData = {
     url: isOnline
         ? emailData.meetingLink

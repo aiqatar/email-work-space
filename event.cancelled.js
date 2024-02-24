@@ -1,3 +1,5 @@
+// done
+
 const dynamicTemplateData = {
     url: isOnline
         ? emailData.meetingLink
@@ -12,12 +14,12 @@ const dynamicTemplateData = {
             : `نأسف لإبلاغك أنه تم تعديل اسم `,
     content2:
         emailData.userLanguage === 'en'
-            ? `Event Name : ${emailData.eventName}`
-            : `اسم الحدث : ${emailData.eventNameAr}`,
+            ? `<strong>Event Name:</strong> ${emailData.eventName}`
+            : `<strong>اسم الحدث:</strong> ${emailData.eventNameAr}`,
     content3:
         emailData.userLanguage == 'en'
-            ? `Date : ${emailData.eventDate}`
-            : `التاريخ: ${emailData.eventDate}`,
+            ? `<strong>Date:</strong> ${emailData.eventDate}`
+            : `<strong>التاريخ:</strong> ${emailData.eventDate}`,
 
     subject:
         emailData.userLanguage === 'en'
